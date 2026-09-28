@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/spotify_black"
+    tools:context="br.ulbra.spotifyclone.MainActivity" >
+
+    <!-- BOTÃO VOLTAR -->
+
+    <ImageView
+        android:id="@+id/imgVoltar"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="Voltar"
+        android:src="@android:drawable/ic_menu_revert"
+        tools:context="br.ulbra.spotifyclone.MainActivity"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <!-- TOCANDO AGORA -->
+
+    <TextView
+        android:id="@+id/txtTocando"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="TOCANDO AGORA"
+        android:textColor="@color/spotify_white"
+        android:textSize="12sp"
+        android:textStyle="bold"
+
+        app:layout_constraintBottom_toBottomOf="@id/imgVoltar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imgVoltar" />
+
+
+    <!-- CAPA DO ÁLBUM VERBALIZE -->
+
+    <ImageView
+        android:id="@+id/imgCapa"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="28dp"
+
+        android:contentDescription="Capa do álbum Verbalize"
+        android:scaleType="centerCrop"
+        android:src="@drawable/album_natiruts"
+
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgVoltar" />
+
+
+    <!-- NOME DA MÚSICA -->
+
+    <TextView
+        android:id="@+id/txtMusica"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="28dp"
+
+        android:text="Verbalize"
+        android:textColor="@color/spotify_white"
+        android:textSize="23sp"
+        android:textStyle="bold"
+
+        android:maxLines="1"
+        android:ellipsize="end"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgCapa" />
+
+
+    <!-- ARTISTA -->
+
+    <TextView
+        android:id="@+id/txtArtista"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="28dp"
+
+        android:text="Natiruts"
+        android:textColor="@color/spotify_gray"
+        android:textSize="16sp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtMusica" />
+
+
+    <!-- BARRA DE PROGRESSO -->
+
+    <View
+        android:id="@+id/barraFundo"
+        android:layout_width="0dp"
+        android:layout_height="4dp"
+
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="28dp"
+
+        android:background="@color/spotify_gray"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtArtista" />
+
+
+    <!-- PROGRESSO DA MÚSICA -->
+
+    <View
+        android:id="@+id/barraProgresso"
+        android:layout_width="120dp"
+        android:layout_height="4dp"
+
+        android:background="@color/spotify_white"
+
+        app:layout_constraintStart_toStartOf="@id/barraFundo"
+        app:layout_constraintTop_toTopOf="@id/barraFundo" />
+
+
+    <!-- TEMPO ATUAL -->
+
+    <TextView
+        android:id="@+id/txtTempoAtual"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="7dp"
+
+        android:text="1:24"
+        android:textColor="@color/spotify_gray"
+        android:textSize="11sp"
+
+        app:layout_constraintStart_toStartOf="@id/barraFundo"
+        app:layout_constraintTop_toBottomOf="@id/barraFundo" />
+
+
+    <!-- DURAÇÃO -->
+
+    <TextView
+        android:id="@+id/txtDuracao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="7dp"
+
+        android:text="56:51"
+        android:textColor="@color/spotify_gray"
+        android:textSize="11sp"
+
+        app:layout_constraintEnd_toEndOf="@id/barraFundo"
+        app:layout_constraintTop_toBottomOf="@id/barraFundo" />
+
+
+    <!-- MÚSICA ANTERIOR -->
+
+    <ImageView
+        android:id="@+id/btnAnterior"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+
+        android:contentDescription="Música anterior"
+        android:src="@android:drawable/ic_media_previous"
+
+        app:layout_constraintBottom_toBottomOf="@id/btnPlay"
+        app:layout_constraintEnd_toStartOf="@id/btnPlay"
+        app:layout_constraintTop_toTopOf="@id/btnPlay" />
+
+
+    <!-- BOTÃO PLAY -->
+
+    <ImageView
+        android:id="@+id/btnPlay"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+
+        android:layout_marginTop="28dp"
+
+        android:contentDescription="Reproduzir"
+        android:src="@android:drawable/ic_media_play"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtTempoAtual" />
+
+
+    <!-- PRÓXIMA MÚSICA -->
+
+    <ImageView
+        android:id="@+id/btnProximo"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+
+        android:contentDescription="Próxima música"
+        android:src="@android:drawable/ic_media_next"
+
+        app:layout_constraintBottom_toBottomOf="@id/btnPlay"
+        app:layout_constraintStart_toEndOf="@id/btnPlay"
+        app:layout_constraintTop_toTopOf="@id/btnPlay" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
